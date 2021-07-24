@@ -5,6 +5,7 @@ This bot only works for the jklm.fun version of bomb party
 
 # How to use
 Asuming many things (1080p monitor, regular zoom level etc.), this bot should work straight out of the box. Simply replace line 17 with where you have wordlist.txt stored
+
 When its your turn simply press F8 and the bot will do its thing
 
 # Some extra steps if it does not work
