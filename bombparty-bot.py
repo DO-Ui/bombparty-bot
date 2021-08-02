@@ -14,7 +14,10 @@ import pyperclip
 send = KeyboardController()
 mouse = MouseController()
 
-with open(r"C:\Users\zZDOU\Downloads\bombparty ruiner\wordlist.txt", encoding="utf8") as f:
+CURR_DIR = os.path.dirname(os.path.realpath(__file__))
+
+with open(CURR_DIR + r"\wordlist.txt",
+          encoding="utf8") as f:
     content = f.readlines()
 
 alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
