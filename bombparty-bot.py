@@ -4,15 +4,14 @@ import os
 import time
 from pynput.keyboard import Key, Controller as KeyboardController
 from pynput.mouse import Button, Controller as MouseController
-# import PIL
-# from PIL import ImageGrab
 import io
-# from PIL import Image
 import random
 import pyperclip
 
 send = KeyboardController()
 mouse = MouseController()
+
+SET_THIS_TO_True_FOR_LONG_WORDS = False
 
 CURR_DIR = os.path.dirname(os.path.realpath(__file__))
 
@@ -20,14 +19,10 @@ with open(CURR_DIR + r"\wordlist.txt",
           encoding="utf8") as f:
     content = f.readlines()
 
-alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
-usedletters = []
-atoz = []
 
 def on_activate():
     pos = mouse.position
-    mouse.position = (810, 555)
+    mouse.position = (835, 575)
     mouse.press(Button.left)
     mouse.release(Button.left)
     mouse.press(Button.left)
@@ -37,7 +32,7 @@ def on_activate():
     time.sleep(0.01)
     send.release('c')
     send.release(Key.ctrl)
-    
+
     time.sleep(0.1)
 
     result = pyperclip.paste()
@@ -47,50 +42,52 @@ def on_activate():
     mouse.position = (pos)
     mouse.press(Button.left)
     mouse.release(Button.left)
-    mouse.press(Button.left)
-    mouse.release(Button.left)
-    
+    # mouse.press(Button.left)
+    # mouse.release(Button.left)
+
     search = result.lower()
     search = search.strip()
-    # print(search)
     found = []
     for i in content:
         if (i.find(search) != -1):
             found.append(i)
-    
+
     arrsize = len(found)
     if (arrsize == 0):
         return print("error")
 
-    choice = random.randint(0, arrsize-1)
-    
-    for char in found[choice]:
-        usedletters.append(char)
+    l = 0
+
+    if (SET_THIS_TO_True_FOR_LONG_WORDS):
+        for i in range(len(found)):
+            if len(found[i]) > l:
+                l = i
+        choice = l
+    else:
+        choice = random.randint(0, arrsize - 1)
+
+    for char in found[choice].strip():
         send.press(char)
         send.release(char)
-        time.sleep(0.096)
-    nodups = list(dict.fromkeys(usedletters))
-    atoz = sorted(nodups)
-    time.sleep(0.02)
+        time.sleep(0)
+    time.sleep(0.00001)
     send.press(Key.enter)
     send.release(Key.enter)
-            
+    print(found[choice])
+
+
 def reset_bonus():
     usedletters = []
     nodups = []
     atoz = []
 
+
 def for_canonical(f):
     return lambda k: f(l.canonical(k))
 
-hotkey = keyboard.HotKey(
-    keyboard.HotKey.parse('<f8>'),
-    on_activate)
 
-with keyboard.Listener(
-    on_press=for_canonical(hotkey.press),
-    on_release=for_canonical(hotkey.release)) as l:
+hotkey = keyboard.HotKey(keyboard.HotKey.parse('<f8>'), on_activate)
+
+with keyboard.Listener(on_press=for_canonical(hotkey.press),
+                       on_release=for_canonical(hotkey.release)) as l:
     l.join()
-
-
-
