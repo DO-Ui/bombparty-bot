@@ -21,6 +21,6 @@ To use XY.exe simply run it and move your mouse over the middle of the letters l
 
 Press "F6" and a small window should show up with the correct X and Y positions
 
-To close the program once you are done simply press the "backtick" key which looks like ``` \` ```
+To close the program once you are done simply press the "backtick" key which looks like ``` ` ```
 
 Make sure that the wordlist.txt is in the same folder as the bombparty-bot.py file
