@@ -8,10 +8,10 @@ Asuming many things (1080p monitor, regular zoom level etc.), this bot should wo
 
 If you wish to only use the longest word the bot finds, go inside the file bombparty-bot.py and edit line 14 to be True
 
-When its your turn simply press F8 and the bot will do its thing
+When its your turn simply press "F8" and the bot will do its thing
 
 # Some extra steps if it does not work
-Not everyone has a 1080p monitor so you may need to direct the bot at the correct spot to select the text. Simply replace line 27 with the position of the letters, use the top left of your screen as 0,0.
+1. Not everyone has a 1080p monitor so you may need to direct the bot at the correct spot to select the text. Simply replace line 27 with the position of the letters, use the top left of your screen as 0,0.
 
 I have provided a compiled AHK script to help you find the correct X and Y positions.
 
@@ -21,6 +21,6 @@ To use XY.exe simply run it and move your mouse over the middle of the letters l
 
 Press "F6" and a small window should show up with the correct X and Y positions
 
-To close the program once you are done simply press the "backtick" key which looks like ``` ` ```
+To close the program once you are done simply press the "backtick" key which looks like ``` ` ``` It should be to the left of your ```1``` key
 
-Make sure that the wordlist.txt is in the same folder as the bombparty-bot.py file
+2. Make sure that the wordlist.txt is in the same folder as the bombparty-bot.py file
