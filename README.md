@@ -4,7 +4,7 @@ Ruin your friend's day!
 This bot only works for the jklm.fun version of bomb party
 
 # How to use
-Asuming many things (1080p monitor, regular zoom level etc.), this bot should work straight out of the box. 
+Asuming many things (1080p monitor, regular zoom level, opera browser (yes I use opera), etc.), this bot should work straight out of the box. 
 
 If you wish to only use the longest word the bot finds, go inside the file bombparty-bot.py and edit line 14 to be True
 
