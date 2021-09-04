@@ -1,4 +1,7 @@
 # Bombparty bot (WIP)
+
+I recommend you use the new version at https://github.com/DO-Ui/BombpartyBot
+
 Ruin your friend's day!
 
 This bot only works for the jklm.fun version of bomb party
