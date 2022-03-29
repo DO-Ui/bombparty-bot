@@ -1,6 +1,6 @@
 # Bombparty bot (Outdated)
 
-**THIS BOT IS OUTDATED, check out my new version at https://github.com/DO-Ui/BombpartyBot**
+## **THIS BOT IS OUTDATED, check out my new version at https://github.com/DO-Ui/BombpartyBot**
 
 Ruin your friend's day!
 
